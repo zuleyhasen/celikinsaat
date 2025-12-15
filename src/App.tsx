@@ -5,7 +5,7 @@ import Vision from './components/sections/Vision';
 import Projects from './components/sections/Projects';
 import Why from './components/sections/Why';
 import International from './components/sections/International';
-import CTA from './components/sections/CTA';
+import Contact from './components/sections/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
           <Projects />
           <Why />
           <International />
-          <CTA />
+          <Contact />
         </main>
         <Footer />
       </div>

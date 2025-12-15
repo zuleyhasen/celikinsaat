@@ -2,30 +2,18 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { supabase, type CompanyStat } from '../../lib/supabase';
+import { companyStats, type CompanyStat } from '../../content/stats.ts';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Why() {
   const { t, i18n } = useTranslation();
-  const [stats, setStats] = useState<CompanyStat[]>([]);
+  const [stats, setStats] = useState<CompanyStat[]>(companyStats);
   const sectionRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    async function fetchStats() {
-      const { data, error } = await supabase
-        .from('company_stats')
-        .select('*')
-        .order('display_order', { ascending: true });
-
-      if (data && !error) {
-        setStats(data);
-      }
-    }
-
-    fetchStats();
-  }, []);
+  // Veritabanı kaldırıldığı için istatistikler doğrudan companyStats'tan alınıyor.
+  // useEffect'i sadece animasyon için kullanıyoruz.
 
   useEffect(() => {
     if (stats.length === 0) return;

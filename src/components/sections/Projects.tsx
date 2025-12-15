@@ -2,7 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { supabase, type Project } from '../../lib/supabase';
+import { projectsEN } from '../../content/projects.en.ts';
+import { projectsAR } from '../../content/projects.ar.ts';
+import { projectsTR } from '../../content/projects.tr.ts';
+import { Project } from '../../types/project.ts';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,19 +17,21 @@ export default function Projects() {
   const projectsContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    async function fetchProjects() {
-      const { data, error } = await supabase
-        .from('projects')
-        .select('*')
-        .order('display_order', { ascending: true });
-
-      if (data && !error) {
-        setProjects(data);
-      }
+    let data: Project[] = [];
+    switch (i18n.language) {
+      case 'en':
+        data = projectsEN;
+        break;
+      case 'ar':
+        data = projectsAR;
+        break;
+      case 'tr':
+      default:
+        data = projectsTR;
+        break;
     }
-
-    fetchProjects();
-  }, []);
+    setProjects(data.sort((a, b) => a.display_order - b.display_order));
+  }, [i18n.language]);
 
   useEffect(() => {
     if (projects.length === 0) return;
@@ -78,8 +83,7 @@ export default function Projects() {
   }, [projects]);
 
   const getLocalizedField = (project: Project, field: 'title' | 'description') => {
-    const lang = i18n.language as 'tr' | 'en' | 'ar';
-    return project[`${field}_${lang}`];
+    return project[field];
   };
 
   return (
