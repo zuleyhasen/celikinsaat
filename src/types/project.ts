@@ -7,6 +7,7 @@ export type Project = {
   year: number;
   category: string;
   display_order: number;
+  status?: 'completed' | 'in-progress';
 };
 
 export type CompanyStat = {

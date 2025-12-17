@@ -6,6 +6,7 @@ import { projectsEN } from '../../content/projects.en.ts';
 import { projectsAR } from '../../content/projects.ar.ts';
 import { projectsTR } from '../../content/projects.tr.ts';
 import { Project } from '../../types/project.ts';
+import { CheckCircle, Zap } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -111,6 +112,23 @@ export default function Projects() {
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-steel-900/90 via-steel-900/50 to-transparent" />
+
+                {project.status && (
+                  <div className="absolute top-8 right-8">
+                    {project.status === 'completed' ? (
+                      <div className="flex items-center gap-2 px-4 py-2 bg-emerald-500/90 rounded-full backdrop-blur-sm">
+                        <CheckCircle size={18} className="text-white" />
+                        <span className="text-white text-xs font-bold uppercase tracking-wider">Completed</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2 px-4 py-2 bg-amber-500/90 rounded-full backdrop-blur-sm animate-pulse">
+                        <Zap size={18} className="text-white" />
+                        <span className="text-white text-xs font-bold uppercase tracking-wider">In Progress</span>
+                      </div>
+                    )}
+                  </div>
+                )}
+
                 <div className="absolute bottom-8 left-8 right-8">
                   <div className="flex items-center gap-4 text-sm text-steel-300 mb-2">
                     <span className="px-3 py-1 bg-steel-800/80 rounded-full uppercase tracking-wide">
