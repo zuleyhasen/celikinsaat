@@ -4,7 +4,7 @@ export const projectsEN: Project[] = [
   {
     id: '1',
     title: 'Çankaya Residence',
-    description: '5-story residential project with modern architectural lines. Facade design enriched with spacious balconies and natural stone details. Total of 20 apartments, 4 independent units per floor.',
+    description: '5-story residential project with modern architectural lines. Design enriched with spacious balconies and natural stone details.',
     image_url: '/projects/building_1.png',
     location: 'Ankara, Turkey',
     year: 2024,
@@ -15,7 +15,7 @@ export const projectsEN: Project[] = [
   {
     id: '2',
     title: 'Karşıyaka Loft Residence',
-    description: '4-story boutique residential project built with contemporary design approach. Natural stone cladding ground floor, modern glass balconies and energy-efficient systems.',
+    description: '4-story boutique residential project built with contemporary design approach. Modern glass balconies and energy-efficient systems.',
     image_url: '/projects/building_2.png',
     location: 'Izmir, Turkey',
     year: 2024,
@@ -26,7 +26,7 @@ export const projectsEN: Project[] = [
   {
     id: '3',
     title: 'Nilüfer Classic Residences',
-    description: '5-story prestigious residential complex designed in neo-classical architectural style. Column facade details, spacious balconies and elegant lines.',
+    description: '5-story prestigious residential complex designed in neo-classical style. Stands out with elegant lines and spacious balconies.',
     image_url: '/projects/building_3.png',
     location: 'Bursa, Turkey',
     year: 2023,
@@ -37,7 +37,7 @@ export const projectsEN: Project[] = [
   {
     id: '4',
     title: 'Özçelik Construction Headquarters',
-    description: 'Company\'s new generation office and showroom building. Modern steel construction, large glass facades and multi-purpose areas. Showroom and office spaces on ground floor.',
+    description: 'New generation office building with modern steel construction. Large glass facades and multi-purpose functional areas.',
     image_url: '/projects/building_4.png',
     location: 'Istanbul, Turkey',
     year: 2024,
@@ -48,7 +48,7 @@ export const projectsEN: Project[] = [
   {
     id: '5',
     title: 'Okçelik Residence',
-    description: '4-story modern residential project located in city center. Commercial areas on ground floor, comfort-oriented residential units on upper floors. Steel frame construction.',
+    description: '4-story modern residential project located in city center. Comfort-oriented living spaces with steel frame construction.',
     image_url: '/projects/building_5.png',
     location: 'Ankara, Turkey',
     year: 2024,

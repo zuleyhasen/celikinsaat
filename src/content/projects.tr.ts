@@ -4,7 +4,7 @@ export const projectsTR: Project[] = [
   {
     id: '1',
     title: 'Çankaya Rezidans',
-    description: 'Modern mimari çizgilere sahip 5 katlı konut projesi. Geniş balkonlar ve doğal taş detaylarla zenginleştirilmiş cephe tasarımı. Toplam 20 daire, her katta 4 bağımsız bölüm.',
+    description: 'Modern mimari çizgilere sahip 5 katlı konut projesi. Geniş balkonlar ve doğal taş detaylarla zenginleştirilmiş tasarım.',
     image_url: '/projects/building_1.png',
     location: 'Ankara, Türkiye',
     year: 2024,
@@ -15,7 +15,7 @@ export const projectsTR: Project[] = [
   {
     id: '2',
     title: 'Karşıyaka Loft Residence',
-    description: 'Çağdaş tasarım anlayışıyla inşa edilen 4 katlı butik konut projesi. Doğal taş kaplama zemin kat, modern cam balkonlar ve enerji verimli sistemler.',
+    description: 'Çağdaş tasarım anlayışıyla inşa edilen 4 katlı butik konut projesi. Modern cam balkonlar ve enerji verimli sistemler.',
     image_url: '/projects/building_2.png',
     location: 'İzmir, Türkiye',
     year: 2024,
@@ -26,7 +26,7 @@ export const projectsTR: Project[] = [
   {
     id: '3',
     title: 'Nilüfer Klasik Konutları',
-    description: 'Neo-klasik mimari tarzda tasarlanmış 5 katlı prestijli konut kompleksi. Sütunlu cephe detayları, geniş balkonlar ve zarif çizgiler.',
+    description: 'Neo-klasik mimari tarzda tasarlanmış 5 katlı prestijli konut kompleksi. Zarif çizgiler ve geniş balkonlarla dikkat çekiyor.',
     image_url: '/projects/building_3.png',
     location: 'Bursa, Türkiye',
     year: 2023,
@@ -37,7 +37,7 @@ export const projectsTR: Project[] = [
   {
     id: '4',
     title: 'Özçelik İnşaat Merkez Ofis',
-    description: 'Firmanın yeni nesil ofis ve showroom binası. Modern çelik konstrüksiyon, geniş cam cepheler ve çok amaçlı kullanım alanları. Zemin katta showroom ve ofis alanları.',
+    description: 'Modern çelik konstrüksiyon, geniş cam cepheler ve çok amaçlı kullanım alanlarına sahip yeni nesil ofis binası.',
     image_url: '/projects/building_4.png',
     location: 'İstanbul, Türkiye',
     year: 2024,
@@ -48,7 +48,7 @@ export const projectsTR: Project[] = [
   {
     id: '5',
     title: 'Okçelik Residence',
-    description: 'Şehir merkezinde konumlanmış 4 katlı modern konut projesi. Zemin katta ticari alanlar, üst katlarda konfor odaklı konut birimleri. Çelik çerçeve konstrüksiyon.',
+    description: 'Şehir merkezinde 4 katlı modern konut projesi. Çelik çerçeve konstrüksiyon ile konfor odaklı yaşam alanları.',
     image_url: '/projects/building_5.png',
     location: 'Ankara, Türkiye',
     year: 2024,
