@@ -31,6 +31,10 @@ const resources = {
       projects: {
         title: 'Seçkin Projeler',
         category: 'Kategori',
+        completed: 'Tamamlandı',
+        inProgress: 'Devam Ediyor',
+        totalProjects: 'Toplam Proje',
+        yearsExperience: 'Yıl Deneyim',
       },
       why: {
         title: 'Neden Çelik İnşaat?',
@@ -94,6 +98,10 @@ const resources = {
       projects: {
         title: 'Featured Projects',
         category: 'Category',
+        completed: 'Completed',
+        inProgress: 'In Progress',
+        totalProjects: 'Total Projects',
+        yearsExperience: 'Years Experience',
       },
       why: {
         title: 'Why Çelik İnşaat?',
@@ -157,6 +165,10 @@ const resources = {
       projects: {
         title: 'مشاريع مميزة',
         category: 'الفئة',
+        completed: 'مكتمل',
+        inProgress: 'قيد التنفيذ',
+        totalProjects: 'إجمالي المشاريع',
+        yearsExperience: 'سنوات الخبرة',
       },
       why: {
         title: 'لماذا شيليك إنشات؟',
