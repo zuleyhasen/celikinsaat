@@ -47,7 +47,7 @@ export const projectsEN: Project[] = [
   },
   {
     id: '5',
-    title: 'Okçelik Residence',
+    title: 'Ozcelik Residence',
     description: '4-story modern residential project located in city center. Comfort-oriented living spaces with steel frame construction.',
     image_url: '/projects/building_5.png',
     location: 'Ankara, Turkey',

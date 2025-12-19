@@ -17,7 +17,7 @@ const resources = {
         contact: 'İletişim',
       },
       hero: {
-        title: 'Çelik İle',
+        title: 'Özçelik İle',
         subtitle: 'Geleceği İnşa Ediyoruz',
         description: 'Türkiye\'nin en büyük çelik konstrüksiyon şirketi. 32 yıllık deneyim, 12 ülkede 287 proje.',
         scroll: 'Kaydır',
@@ -25,7 +25,7 @@ const resources = {
       vision: {
         title: 'Mühendislik Mükemmeliyeti',
         subtitle: 'Vizyon',
-        content: 'Çelik İnşaat olarak, modern mimarinin en zorlu projelerini hayata geçiriyoruz. Her yapı, mühendislik bilgimizin ve titiz işçiliğimizin bir yansımasıdır.',
+        content: 'Özçelik İnşaat olarak, modern mimarinin en zorlu projelerini hayata geçiriyoruz. Her yapı, mühendislik bilgimizin ve titiz işçiliğimizin bir yansımasıdır.',
         highlight: 'Dünya standartlarında kalite, zamanında teslimat ve sürdürülebilir çözümler sunuyoruz.',
       },
       projects: {
@@ -85,14 +85,14 @@ const resources = {
       },
       hero: {
         title: 'Building the Future',
-        subtitle: 'With Steel',
+        subtitle: 'With Özçelik',
         description: 'Turkey\'s largest steel construction company. 32 years of experience, 287 projects in 12 countries.',
         scroll: 'Scroll',
       },
       vision: {
         title: 'Engineering Excellence',
         subtitle: 'Vision',
-        content: 'At Çelik İnşaat, we bring the most challenging projects of modern architecture to life. Every structure is a reflection of our engineering knowledge and meticulous craftsmanship.',
+        content: 'At Özçelik İnşaat, we bring the most challenging projects of modern architecture to life. Every structure is a reflection of our engineering knowledge and meticulous craftsmanship.',
         highlight: 'We deliver world-class quality, on-time delivery, and sustainable solutions.',
       },
       projects: {
@@ -104,7 +104,7 @@ const resources = {
         yearsExperience: 'Years Experience',
       },
       why: {
-        title: 'Why Çelik İnşaat?',
+        title: 'Why Özçelik İnşaat?',
         reason1: 'Technical Excellence',
         reason1Desc: 'Steel processing and assembly to European standards',
         reason2: 'On-Time Delivery',

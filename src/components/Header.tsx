@@ -29,7 +29,7 @@ export default function Header() {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="text-2xl font-bold tracking-tight text-white"
           >
-            ÇELİK İNŞAAT
+            ÖZÇELİK İNŞAAT
           </motion.div>
 
           <div className="hidden md:flex items-center gap-12">
