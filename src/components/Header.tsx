@@ -1,145 +1,88 @@
-import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Globe, Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { languages } from '../i18n/config';
+import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Header() {
-  const { t, i18n } = useTranslation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLangOpen, setIsLangOpen] = useState(false);
+export function Header() {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-    const dir = languages[lng as keyof typeof languages].dir;
-    document.documentElement.setAttribute('dir', dir);
-    document.documentElement.setAttribute('lang', lng);
-    setIsLangOpen(false);
-  };
-
-  const currentLang = languages[i18n.language as keyof typeof languages];
+  const menuItems = [
+    { label: 'Hakkımızda', href: '#about' },
+    { label: 'Projeler', href: '#projects' },
+    { label: 'İletişim', href: '#contact' },
+  ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
-      <nav className="container mx-auto px-6 py-6">
-        <div className="flex items-center justify-between">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="text-2xl font-bold tracking-tight text-white"
-          >
-            ÖZÇELİK İNŞAAT
-          </motion.div>
+    <header className="fixed top-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo */}
+          <a href="/" className="flex items-center gap-2">
+            <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+              <span className="text-accent-foreground font-bold text-lg">Ö</span>
+            </div>
+            <span className="font-bold text-lg hidden sm:inline">Özçelik</span>
+          </a>
 
-          <div className="hidden md:flex items-center gap-12">
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="flex items-center gap-8"
-            >
-              {['home', 'projects', 'about', 'contact'].map((item, idx) => (
-                <a
-                  key={item}
-                  href={`#${item}`}
-                  className="text-sm font-medium text-white hover:text-accent-gold transition-colors duration-300"
-                  style={{ transitionDelay: `${idx * 50}ms` }}
-                >
-                  {t(`nav.${item}`)}
-                </a>
-              ))}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="relative"
-            >
-              <button
-                onClick={() => setIsLangOpen(!isLangOpen)}
-                className="flex items-center gap-2 text-white hover:text-accent-gold transition-colors duration-300"
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            {menuItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-foreground/70 hover:text-foreground transition-colors duration-200 font-medium"
               >
-                <Globe size={18} />
-                <span className="text-sm font-medium uppercase">{i18n.language}</span>
-              </button>
+                {item.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              className="px-6 py-2 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-colors duration-200"
+            >
+              İletişim
+            </a>
+          </nav>
 
-              <AnimatePresence>
-                {isLangOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full mt-2 right-0 bg-steel-800 border border-steel-700 rounded-lg overflow-hidden shadow-2xl"
-                  >
-                    {Object.keys(languages).map((lng) => (
-                      <button
-                        key={lng}
-                        onClick={() => changeLanguage(lng)}
-                        className={`block w-full text-left px-4 py-2 text-sm hover:bg-steel-700 transition-colors ${
-                          i18n.language === lng ? 'bg-steel-700 text-accent-gold' : 'text-white'
-                        }`}
-                      >
-                        {languages[lng as keyof typeof languages].nativeName}
-                      </button>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          </div>
-
+          {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white"
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 hover:bg-secondary rounded-lg transition-colors"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
+        {/* Mobile Navigation */}
         <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
+          {isOpen && (
+            <motion.nav
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden mt-6 pb-6 border-t border-steel-700 pt-6"
+              className="md:hidden border-t border-border overflow-hidden"
             >
-              <div className="flex flex-col gap-4">
-                {['home', 'projects', 'about', 'contact'].map((item) => (
+              <div className="flex flex-col gap-4 py-4">
+                {menuItems.map((item) => (
                   <a
-                    key={item}
-                    href={`#${item}`}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="text-white hover:text-accent-gold transition-colors text-lg"
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-foreground/70 hover:text-foreground transition-colors duration-200 font-medium px-4"
                   >
-                    {t(`nav.${item}`)}
+                    {item.label}
                   </a>
                 ))}
-                <div className="flex gap-4 mt-4 border-t border-steel-700 pt-4">
-                  {Object.keys(languages).map((lng) => (
-                    <button
-                      key={lng}
-                      onClick={() => {
-                        changeLanguage(lng);
-                        setIsMenuOpen(false);
-                      }}
-                      className={`text-sm uppercase ${
-                        i18n.language === lng ? 'text-accent-gold' : 'text-white'
-                      }`}
-                    >
-                      {lng}
-                    </button>
-                  ))}
-                </div>
+                <a
+                  href="#contact"
+                  onClick={() => setIsOpen(false)}
+                  className="mx-4 px-6 py-2 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-colors duration-200 text-center"
+                >
+                  İletişim
+                </a>
               </div>
-            </motion.div>
+            </motion.nav>
           )}
         </AnimatePresence>
-      </nav>
+      </div>
     </header>
   );
 }
